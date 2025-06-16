@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет - МедКонвертер</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="main-container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-heartbeat logo-icon"></i>
+                <h1>Медицинский Конвертер Документов</h1>
+            </div>
+            <button onclick="logout()" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i> Выход
+            </button>
+        </header>
+
+        <div class="content-wrapper">
+            <h2 class="section-title"><i class="fas fa-folder-open"></i> Ваши файлы</h2>
+            
+            <div class="upload-section">
+                <label for="fileInput" class="file-label">
+                    <i class="fas fa-file-upload"></i>
+                    <span>Выберите файл для конвертации</span>
+                </label>
+                <input type="file" id="fileInput" onchange="handleFileSelect(event)" hidden>
+                <div id="uploadStatus" class="message"></div>
+                <button onclick="uploadFile()" class="download-btn" style="margin-top: 20px;">
+                    <i class="fas fa-file-pdf"></i> Конвертировать в PDF
+                </button>
+            </div>
+
+            <div class="file-items" id="fileItems"></div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="upload.js"></script>
+    <script src="files.js"></script>
+</body>
+</html>
